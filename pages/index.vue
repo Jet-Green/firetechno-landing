@@ -5,6 +5,9 @@
       <v-col cols="12" md="8" lg="7">
         <LandingSiteDevelopmentForYourTasks />
       </v-col>
+      <v-col cols="12" md="8" lg="7">
+        <LandingStagesOfDevelopment />  
+      </v-col>
     </v-row>
   </v-container>
 </template>
