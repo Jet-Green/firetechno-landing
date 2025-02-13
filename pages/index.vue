@@ -2,10 +2,10 @@
 <template>
   <v-container class="container">
     <v-row class="d-flex justify-center">
-      <v-col cols="12" md="8" lg="7">
+      <v-col cols="12" md="10" lg="8">
         <LandingSiteDevelopmentForYourTasks />
       </v-col>
-      <v-col cols="12" md="8" lg="7">
+      <v-col cols="12" md="10" lg="8">
         <LandingStagesOfDevelopment />  
       </v-col>
     </v-row>
