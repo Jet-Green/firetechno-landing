@@ -2,3 +2,16 @@
   // background-color: #0a0a0a;
   // color: #faebeb;
 }
+
+// @font-face {
+//   font-family: 'Dela Gothic One';
+//   font-style: normal;
+//   font-display: swap;
+//   src: url('~assets/fonts/DelaGothicOne-Regular.ttf');
+// }
+
+.first-heading {
+  font-family: "Dela Gothic One", serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 1.3068rem + 3.4091vw, 4rem);
+}

@@ -2,7 +2,9 @@
 <template>
   <v-row>
     <v-col cols="6">
-      Разработка сайтов для ваших задач
+      <h1 class="first-heading">
+        Разработка сайтов для ваших задач
+      </h1>
 
       <v-btn>Заказать</v-btn>
     </v-col>
