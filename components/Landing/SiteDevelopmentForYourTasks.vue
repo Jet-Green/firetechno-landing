@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <v-row class="page">
-    <v-col cols="6">
+    <v-col cols="12" md="6">
       <h1 class="first-heading">Разработка сайтов для ваших задач</h1>
       <p class="subtitle">Создание и разработка сайтов от команд FIRE TECHNO</p>
 
@@ -10,8 +10,8 @@
       </v-btn>
     </v-col>
 
-    <v-col cols="6"> 
-      <img src="~assets/images/firstpage.jpg" alt="" class="first-page-image">
+    <v-col cols="12" md="6"> 
+      <img src="~assets/images/rse-2-1 v1.webp" alt="" class="first-page-image">
     </v-col>
   </v-row>
 </template>
@@ -49,6 +49,7 @@
 
 }
 .first-page-image {
-  max-width: 30vw;
+  width: 100%;
+  border-radius: 20px;
 }
 </style>
