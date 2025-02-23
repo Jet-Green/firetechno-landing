@@ -1,0 +1,16 @@
+* {
+  font-family: "Unbounded", serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 1.2528rem + 1.4205vw, 2.375rem);
+}
+
+.card-title {
+  font-weight: 400;
+  font-size: clamp(1.375rem, 0.9773rem + 1.1364vw, 1.875rem);
+}/*# sourceMappingURL=main.css.map */
