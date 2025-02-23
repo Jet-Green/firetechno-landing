@@ -1,7 +1,39 @@
 <script setup></script>
 <template>
-  <v-row>
-    <v-col cols="6"> тут первая половина(форма) </v-col>
+  <v-row style="margin-top: 100px;">
+    <v-col cols="6"> 
+      <div class="card">
+        <v-row style="color: white;">
+          <v-col cols="12">
+            <h2 class="text-center">Заказать сайт</h2>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field variant="outlined" label="Имя"></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field variant="outlined" label="Электронная почта"></v-text-field>
+          </v-col>
+          
+          <v-col cols="12">
+            <v-text-field variant="outlined" label="Контактный телефон"></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field variant="outlined" label="Бюджет"></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-textarea variant="outlined" label="Комментарий"></v-textarea>
+          </v-col>
+          
+          <v-col cols="12">
+            <v-btn class="buy-btn" color="primary" size="x-large" style="width: 100%;"> заказать </v-btn>
+          </v-col>
+        </v-row>
+      </div>
+    </v-col>
     <v-col cols="6">
       <div class="back">
         <h2>
@@ -31,9 +63,6 @@
   </v-row>
 </template>
 <style scoped lang="scss">
-.back {
-  padding-top: 89px;
-}
 .inf {
   padding-top: 59px;
   h4 {
@@ -43,5 +72,10 @@
   p {
     font-size: 20px;
   }
+}
+.card {
+  background-color: black;
+  border-radius: 30px;
+  padding: 30px;
 }
 </style>

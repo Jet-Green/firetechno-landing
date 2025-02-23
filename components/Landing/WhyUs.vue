@@ -1,32 +1,49 @@
 <script setup></script>
 <template>
-  <div class="cont">
-    <h2>
-      Наши преимущества: <br />
-      почему выбирают нас?
-    </h2>
-    <div class="exp">
-      <h4>Опыт</h4>
-      <p>
-        Многолетний опыт в сфере <br />
-        интернет-маркетинга.
-      </p>
-    </div>
-    <div class="ind">
-      <h4>Индивидуальный подход</h4>
-      <p>
-        Разработка решений, <br />
-        адаптированных под ваши задачи.
-      </p>
-    </div>
-    <div class="qual">
-      <h4>Качество</h4>
-      <p>
-        Гарантия высокого качества <br />
-        предоставляемых услуг.
-      </p>
-    </div>
-  </div>
+  <v-row>
+    <v-col cols="12">
+      <h2>
+        Наши преимущества: <br />
+        почему выбирают нас?
+      </h2>
+    </v-col>
+    <v-col cols="6" class="d-flex justify-end">
+      <div class="exp">
+        <h4>Опыт</h4>
+        <p>
+          Многолетний опыт в сфере <br />
+          интернет-маркетинга.
+        </p>
+      </div>
+    </v-col>
+    <v-col cols="6">
+    </v-col>
+
+    <v-col cols="6">
+    </v-col>
+    <v-col cols="6" class="d-flex justify-start">
+      <div class="ind">
+        <h4>Индивидуальный подход</h4>
+        <p>
+          Разработка решений, <br />
+          адаптированных под ваши задачи.
+        </p>
+      </div>
+    </v-col>
+   
+    <v-col cols="6" class="d-flex justify-end">
+    
+      <div class="qual">
+        <h4>Качество</h4>
+        <p>
+          Гарантия высокого качества <br />
+          предоставляемых услуг.
+        </p>
+      </div>
+    </v-col>
+    <v-col cols="6">
+    </v-col>
+  </v-row>
 </template>
 <style scoped lang="scss">
 .cont {
