@@ -13,7 +13,7 @@
       <v-row class="all__comp">
         <v-col class="number">
           <span>1</span>
-          <h4>Автоматизация</h4>
+          <p class="card-title">Автоматизация</p>
           <p>
             Ответы на часто <br />
             задаваемые вопросы.
@@ -21,10 +21,10 @@
         </v-col>
         <v-col class="number">
           <span>2</span>
-          <h4>
+          <p class="card-title">
             Круглосуточная <br />
             поддержка
-          </h4>
+          </p>
           <p>
             Доступность для <br />
             клиентов в любое время.
@@ -32,7 +32,7 @@
         </v-col>
         <v-col class="number">
           <span>3</span>
-          <h4>Вовлеченность</h4>
+          <p class="card-title">Вовлеченность</p>
           <p>
             Повышение лояльности и <br />
             удовлетворенности клиентов.
@@ -40,7 +40,7 @@
         </v-col>
         <v-col class="number">
           <span>4</span>
-          <h4>Результат</h4>
+          <p class="card-title">Результат</p>
           <p>
             Довольный клиент и <br />
             готовое решение для бизнеса
@@ -57,8 +57,8 @@ span {
 }
 .number {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 </style>
