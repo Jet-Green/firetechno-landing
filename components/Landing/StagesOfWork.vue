@@ -8,14 +8,11 @@
         до реализации проекта
       </h2>
     </v-col>
-    
-    <v-col cols="12" class="d-flex justify-center">
-      <img src="~/assets/icons/GroupingStages.svg" alt="" />
-    </v-col>
 
     <v-col cols="12">
       <v-row class="all__comp">
         <v-col class="number">
+          <span>1</span>
           <h4>Автоматизация</h4>
           <p>
             Ответы на часто <br />
@@ -23,6 +20,7 @@
           </p>
         </v-col>
         <v-col class="number">
+          <span>2</span>
           <h4>
             Круглосуточная <br />
             поддержка
@@ -33,6 +31,7 @@
           </p>
         </v-col>
         <v-col class="number">
+          <span>3</span>
           <h4>Вовлеченность</h4>
           <p>
             Повышение лояльности и <br />
@@ -40,6 +39,7 @@
           </p>
         </v-col>
         <v-col class="number">
+          <span>4</span>
           <h4>Результат</h4>
           <p>
             Довольный клиент и <br />
