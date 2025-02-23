@@ -1,37 +1,44 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="container">
-    <h1>Сайты под ключ: разработка и запуск</h1>
+  <v-row>
+    <v-col cols="12">
+      <h2>
+        Сайты под ключ: <br />
+        разработка и запуск
+      </h2>
+    </v-col>
+    
+    <v-col cols="12">
+      <v-row class="features">
+        <v-col cols="12" md="6" lg="4" class="feature">
+          <v-row>
+            <v-col cols="6">
+              <p class="card-title">Полный цикл разработки</p>
+            </v-col>
+            <v-col cols="6"> картинка </v-col>
+          </v-row>
+          <p>От концепции до готового сайта.</p>
+        </v-col>
 
-    <div class="features">
-      <div class="feature">
-        <h2>Полный цикл разработки</h2>
-        <p>От концепции до готового сайта.</p>
-      </div>
+        <v-col cols="12" md="6" lg="4" class="feature">
+          <p class="card-title">Адаптивный дизайн</p>
+          <p>Корректное отображение на всех устройствах.</p>
+        </v-col>
 
-      <div class="feature">
-        <h2>Адаптивный дизайн</h2>
-        <p>Корректное отображение на всех устройствах.</p>
-      </div>
-
-      <div class="feature">
-        <h2>SEO-оптимизация</h2>
-        <p>Повышение позиций в поисковых системах.</p>
-      </div>
-    </div>
-  </div>
+        <v-col cols="12" md="6" lg="4" class="feature">
+          <p class="card-title">SEO-оптимизация</p>
+          <p>Повышение позиций в поисковых системах.</p>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-row>
 </template>
 <style scoped lang="scss">
 .features {
   display: flex;
 }
 .feature {
-  background-color: red;
-  height: 150px;
-  width: 400px;
-  border-radius: 8px;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 5px;
+  border: 1px solid #dc0000;
+  border-radius: 25px;
 }
 </style>
