@@ -1,52 +1,55 @@
 <script setup></script>
 <template>
-  <div class="text_photo">
-    <div class="text">
+  <v-row style="margin-top: 150px;">
+    <v-col cols="12" class="mb-10">
       <h2>Лендинги, которые конвертируют <br />посетителей в клиентов</h2>
-      <ul class="baze">
-        <li class="baze_text">
-          <h4>Привлекательный дизайн</h4>
-          <p>Визуально убедительное <br />представление вашего продукта.</p>
-        </li>
-        <li class="baze_text">
-          <h4>Четкий призыв к действию</h4>
-          <p>
+    </v-col>
+
+    <v-col cols="12" lg="6">
+      <div class="list">
+        <div class="">
+          <p class="card-title mb-6">Привлекательный дизайн</p>
+          <p class="mb-10">Визуально убедительное <br />представление вашего продукта.</p>
+        </div>
+        <div class="">
+          <p class="card-title mb-6">Четкий призыв к действию</p>
+          <p class="mb-10">
             Мотивация посетителей к совершению <br />
             целевого действия.
           </p>
-        </li>
-        <li class="baze_text">
-          <h4>Аналитика и оптимизация</h4>
-          <p>
+        </div>
+        <div class="">
+          <p class="card-title mb-6">Аналитика и оптимизация</p>
+          <p class="mb-10">
             Отслеживание результатов и улучшение<br />
             показателей.
           </p>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </div>
+    </v-col>
+
+    <v-col cols="12" lg="6" class="d-none d-lg-flex align-start justify-start" style="position: relative; overflow: visible;">
+      <img src="~/assets/images/man with computer.png" alt="" class="man-with-comp" />
+    </v-col>
+
     <div class="photo">
       <img src="" alt="" />
     </div>
-  </div>
+  </v-row>
 </template>
 <style scoped lang="scss">
-.text {
-  h2 {
-    size: 40px;
-    padding-top: 94px;
-    padding-left: 74px;
-  }
-  .baze {
-    padding-top: 107px;
-    padding-bottom: 41px;
-    padding-left: 74px;
-    list-style: none;
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
 
-    h4 {
-      margin-bottom: 20px;
-      size: 30px;
-      margin-top: 94px;
-    }
-  }
+.man-with-comp {
+  height: 80vh;
+  position: absolute;
+  left: -200px;
+  top: -200px;
 }
 </style>
