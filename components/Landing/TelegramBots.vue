@@ -11,8 +11,8 @@
           </h2>
         </v-col>
 
-        <v-col cols="4">
-          <img src="" alt="" />
+        <v-col cols="12" mb="6" lg="4">
+          <img src="~/assets/icons/Dialog Plus.svg" alt="" />
           <p class="card-title">Автоматизация</p>
           <p class="mt-10">
             Ответы на часто <br />
@@ -20,8 +20,8 @@
           </p>
         </v-col>
 
-        <v-col cols="4">
-          <img src="" alt="" />
+        <v-col cols="12" mb="6" lg="4">
+          <img src="~/assets/icons/Support.svg" alt="" />
           <p class="card-title">
             Круглосуточная <br />
             поддержка
@@ -29,8 +29,8 @@
           <p class="mt-10">Доступность для клиентов <br />в любое время.</p>
         </v-col>
 
-        <v-col cols="4">
-          <img src="" alt="" />
+        <v-col cols="12" mb="6" lg="4">
+          <img src="~/assets/icons/Target.svg" alt="" />
           <p class="card-title">Вовлеченность</p>
           <p class="mt-10">
             Повышение лояльности и <br />
