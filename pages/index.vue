@@ -20,6 +20,9 @@
       <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
+      <v-col cols="12" xl="11">
+        <LandingOurTeams />
+      </v-col>
     </v-row>
   </v-container>
 </template>
