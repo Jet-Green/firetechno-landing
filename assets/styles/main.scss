@@ -17,6 +17,7 @@ h2 {
 }
 
 .card-title {
-  font-weight: 400;
-  font-size: clamp(1.375rem, 0.9773rem + 1.1364vw, 1.875rem);
+  font-weight: 600;
+  // 22 -> 26
+  font-size: clamp(1.375rem, 1.1761rem + 0.5682vw, 1.625rem);
 }
