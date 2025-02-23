@@ -2,15 +2,16 @@
 <template>
   <v-container class="container">
     <v-row class="d-flex justify-center">
-      <v-col cols="12" md="10" lg="8">
+      <v-col cols="12" lg="11">
         <LandingSiteDevelopmentForYourTasks />
       </v-col>
-      <v-col cols="12" md="10" lg="8">
-        <LandingStagesOfDevelopment />  
+      <v-col cols="12" lg="11">
+        <LandingStagesOfDevelopment />
+      </v-col>
+      <v-col cols="12" lg="11">
+        <LandingLandings />
       </v-col>
     </v-row>
   </v-container>
 </template>
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
