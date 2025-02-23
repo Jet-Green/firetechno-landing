@@ -25,12 +25,12 @@
       </v-col>
     </v-row>
   </v-container>
-  
+
   <div class="fire-container">
-    <img src="~/assets/images/fire.png" alt="" class="fire-image">  
+    <img src="~/assets/images/fire.png" alt="" class="fire-image" />
   </div>
-  
-  <div style="background-color: #c60202;">
+
+  <div style="background-color: #c60202">
     <v-container>
       <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
@@ -46,7 +46,7 @@
 <style scoped lang="scss">
 .fire-image {
   width: 100vw;
-  height: 100%;
+  height: 101%;
   z-index: 1000;
 }
 </style>
