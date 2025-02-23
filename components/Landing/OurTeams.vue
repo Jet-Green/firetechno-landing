@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <h2></h2>
+  <h2>Команды исполнителей</h2>
   <v-col cols="12">
     <v-row class="features">
       <v-col cols="12" md="6" lg="4">
@@ -45,6 +45,10 @@
   </v-col>
 </template>
 <style scoped lang="scss">
+h2 {
+  padding-bottom: 74px;
+  padding-top: 94px;
+}
 .features {
   display: flex;
 }
