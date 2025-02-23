@@ -23,13 +23,30 @@
       <v-col cols="12" xl="11">
         <LandingOurTeams />
       </v-col>
-      <v-col cols="12" xl="11">
-        <LandingCases />
-      </v-col>
-      <v-col cols="12" xl="11">
-        <LandingFeedback />
-      </v-col>
     </v-row>
   </v-container>
+  
+  <div class="fire-container">
+    <img src="~/assets/images/fire.png" alt="" class="fire-image">  
+  </div>
+  
+  <div style="background-color: #c60202;">
+    <v-container>
+      <v-row class="d-flex justify-center">
+        <v-col cols="12" xl="11">
+          <LandingCases />
+        </v-col>
+        <v-col cols="12" xl="11">
+          <LandingFeedback />
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.fire-image {
+  width: 100vw;
+  height: 100%;
+  z-index: 1000;
+}
+</style>
