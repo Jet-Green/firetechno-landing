@@ -2,22 +2,22 @@
 <template>
   <v-container class="container">
     <v-row class="d-flex justify-center">
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingSiteDevelopmentForYourTasks />
       </v-col>
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingStagesOfDevelopment />
       </v-col>
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingLandings />
       </v-col>
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingTelegramBots />
       </v-col>
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingWhyUs />
       </v-col>
-      <v-col cols="12" lg="11">
+      <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
     </v-row>
