@@ -5,13 +5,11 @@
       <h1 class="first-heading">Разработка сайтов для ваших задач</h1>
       <p class="subtitle">Создание и разработка сайтов от команд FIRE TECHNO</p>
 
-      <v-btn class="buy-btn" color="primary" size="x-large">
-        заказать
-      </v-btn>
+      <v-btn class="buy-btn" color="primary" size="x-large"> заказать </v-btn>
     </v-col>
 
-    <v-col cols="12" md="6"> 
-      <img src="~assets/images/rse-2-1 v1.webp" alt="" class="first-page-image">
+    <v-col cols="12" md="6">
+      <img src="~assets/images/rse-2-1 v1.webp" alt="" class="first-page-image" />
     </v-col>
   </v-row>
 </template>
@@ -23,8 +21,7 @@
 }
 
 .first-heading {
-  font-family: "Dela Gothic One", serif;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   // 36 -> 52
   // font-size: clamp(2.25rem, 1.4545rem + 2.2727vw, 3.25rem);
@@ -33,8 +30,6 @@
 }
 
 .subtitle {
-  font-family: "Dela Gothic One", serif;
-
   color: rgb(167, 167, 167);
   margin-top: 20px;
   font-weight: 200;
@@ -42,11 +37,6 @@
 }
 .buy-btn {
   margin-top: 50px;
-  font-family: "Dela Gothic One", serif;
-  
-  font-weight: 200;
-  line-height: 1.2;
-
 }
 .first-page-image {
   width: 100%;
