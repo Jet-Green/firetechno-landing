@@ -11,6 +11,9 @@
       <v-col cols="12" lg="11">
         <LandingLandings />
       </v-col>
+      <v-col cols="12" lg="11">
+        <LandingTelegramBots />
+      </v-col>
     </v-row>
   </v-container>
 </template>
