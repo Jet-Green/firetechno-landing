@@ -4,12 +4,14 @@
 //   font-display: swap;
 //   src: url('~assets/fonts/DelaGothicOne-Regular.ttf');
 // }
-* {
+body {
   font-family: "Unbounded", serif;
   overflow-y: hidden;
   overflow-x: hidden;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 h1, h2 {
   font-weight: 700;
 }

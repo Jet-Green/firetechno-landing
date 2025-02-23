@@ -1,15 +1,15 @@
 <script setup></script>
 <template>
-  <v-row>
-    <v-col cols="12">
+  <v-row style="margin-top: 100px; margin-bottom: 100px;">
+    <v-col cols="12" class="mb-10">
       <h2>
         Наши преимущества: <br />
         почему выбирают нас?
       </h2>
     </v-col>
-    <v-col cols="6" class="d-flex justify-end">
+    <v-col cols="6" class="d-flex justify-end mb-10 text-end">
       <div class="exp">
-        <h4>Опыт</h4>
+        <p class="card-title">Опыт</p>
         <p>
           Многолетний опыт в сфере <br />
           интернет-маркетинга.
@@ -23,7 +23,7 @@
     </v-col>
     <v-col cols="6" class="d-flex justify-start">
       <div class="ind">
-        <h4>Индивидуальный подход</h4>
+        <p class="card-title">Индивидуальный подход</p>
         <p>
           Разработка решений, <br />
           адаптированных под ваши задачи.
@@ -31,10 +31,10 @@
       </div>
     </v-col>
    
-    <v-col cols="6" class="d-flex justify-end">
+    <v-col cols="6" class="d-flex justify-end text-end">
     
       <div class="qual">
-        <h4>Качество</h4>
+        <p class="card-title">Качество</p>
         <p>
           Гарантия высокого качества <br />
           предоставляемых услуг.
@@ -46,33 +46,4 @@
   </v-row>
 </template>
 <style scoped lang="scss">
-.cont {
-  h4 {
-    padding-top: 74px;
-    padding-left: 74px;
-  }
-  .exp {
-    padding-right: 44px;
-    padding-bottom: 25px;
-    padding-left: 300px;
-    p {
-      padding-left: 74px;
-      padding-top: 20px;
-    }
-  }
-  .ind {
-    padding-left: 700px;
-    p {
-      padding-left: 74px;
-      padding-top: 20px;
-    }
-  }
-  .qual {
-    padding-left: 300px;
-    p {
-      padding-left: 74px;
-      padding-top: 20px;
-    }
-  }
-}
 </style>

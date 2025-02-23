@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-  <v-row style="margin-top: 100px;">
-    <v-col cols="6"> 
+  <v-row style="margin-top: 100px;" id="order">
+    <v-col cols="12" lg="6"> 
       <div class="card">
         <v-row style="color: white;">
           <v-col cols="12">
@@ -34,7 +34,7 @@
         </v-row>
       </div>
     </v-col>
-    <v-col cols="6">
+    <v-col cols="12" lg="6">
       <div class="back">
         <h2>
           Форма обратной связи: <br />

@@ -5,7 +5,7 @@
       <h1 class="first-heading">Разработка сайтов для ваших задач</h1>
       <p class="subtitle">Создание и разработка сайтов от команд FIRE TECHNO</p>
 
-      <v-btn class="buy-btn" color="primary" size="x-large"> заказать </v-btn>
+      <v-btn class="buy-btn" color="primary" size="x-large" href="#order"> заказать </v-btn>
     </v-col>
 
     <v-col cols="12" md="6">

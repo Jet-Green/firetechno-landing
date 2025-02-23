@@ -14,9 +14,19 @@
       <v-col cols="12" xl="11">
         <LandingTelegramBots />
       </v-col>
-      <v-col cols="12" xl="11">
-        <LandingWhyUs />
-      </v-col>
+    </v-row>
+  </v-container>
+  <div class="why-us-background">
+    <v-container>
+      <v-row>
+        <v-col cols="12" xl="11">
+          <LandingWhyUs />
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+  <v-container>
+    <v-row>
       <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
@@ -48,5 +58,9 @@
   width: 100vw;
   height: 101%;
   z-index: 1000;
+}
+.why-us-background {
+  background-image: url("~/assets/images/why-us.png");
+  background-position: center;
 }
 </style>
