@@ -23,6 +23,9 @@
       <v-col cols="12" xl="11">
         <LandingOurTeams />
       </v-col>
+      <v-col cols="12" xl="11">
+        <LandingCases />
+      </v-col>
     </v-row>
   </v-container>
 </template>
