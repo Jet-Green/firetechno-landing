@@ -219,6 +219,6 @@ const handleSubmit = async () => {
 }
 .inf-item-icon {
   font-size: 40px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 </style>
