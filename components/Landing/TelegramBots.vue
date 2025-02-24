@@ -15,12 +15,12 @@
         </v-col>
 
         <v-col cols="12">
-          <v-row>
+          <v-row style="word-wrap: break-word;">
             <v-col cols="12" md="6" lg="4">
               <img src="~/assets/icons/Dialog Plus.svg" alt="" class="item-icon" />
               <p class="card-title">Автоматизация</p>
               
-              <p class="mt-10 d-flex d-lg-none">
+              <p class="mt-10 d-flex d-xl-none">
                 Ответы на часто
                 задаваемые вопросы.
               </p>
@@ -33,7 +33,7 @@
                 поддержка
               </p>
 
-              <p class="mt-10 d-flex d-lg-none">
+              <p class="mt-10 d-flex d-xl-none">
                 Повышение лояльности и <br />
                 удовлетворенности клиентов.
               </p>
@@ -42,12 +42,13 @@
             <v-col cols="12" md="6" lg="4">
               <img src="~/assets/icons/Target.svg" alt="" class="item-icon" />
               <p class="card-title">Вовлеченность</p>
-              <p class="mt-10 d-flex d-lg-none">
+
+              <p class="mt-10 d-flex d-xl-none">
                 Доступность для клиентов в любое время.
               </p>
             </v-col>
           </v-row>
-          <v-row class="d-none d-lg-flex">
+          <v-row class="d-none d-xl-flex">
             <v-col cols="12" md="6" lg="4">
               <p>
                 Ответы на часто
