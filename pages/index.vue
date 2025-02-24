@@ -29,7 +29,7 @@ const setActiveLink = (index: number) => {
         <v-col cols="12" xl="11">
           <v-app-bar-title>
             <v-row class="d-flex justify-space-between">
-              <v-col cols="2" class="d-flex align-center links">
+              <v-col cols="2" class="d-flex align-center justify-start">
                 <NuxtLink to="/">
                   <img src="~/assets/icons/firetechno-logo.svg" alt="" class="logo">
                 </NuxtLink>
