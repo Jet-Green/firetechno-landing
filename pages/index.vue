@@ -11,7 +11,7 @@ useSeoMeta({
 })
 </script>
 <template>
-  <v-app-bar color="black" height="90">
+  <v-app-bar color="black" height="80">
     <v-container>
       <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
@@ -40,7 +40,7 @@ useSeoMeta({
     </v-container>
   </v-app-bar>
   
-  <v-container class="container" style="margin-top: 90px;"><!-- margin for header -->
+  <v-container class="container" style="margin-top: 80px;"><!-- margin for header -->
     <v-row class="d-flex justify-center">
       <v-col cols="12" xl="11">
         <LandingSiteDevelopmentForYourTasks />
@@ -104,7 +104,7 @@ useSeoMeta({
   background-position: center;
 }
 .logo {
-  height: 70px;
+  height: 65px;
   cursor: pointer;
 }
 .navigation {
