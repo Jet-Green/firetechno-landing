@@ -80,7 +80,7 @@ const setActiveLink = (index: number) => {
   </v-container>
   <div class="why-us-background">
     <v-container>
-      <v-row>
+      <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
           <LandingWhyUs />
         </v-col>
@@ -88,7 +88,7 @@ const setActiveLink = (index: number) => {
     </v-container>
   </div>
   <v-container>
-    <v-row>
+    <v-row class="d-flex justify-center">
       <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
