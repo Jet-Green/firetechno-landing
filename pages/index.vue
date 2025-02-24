@@ -18,7 +18,9 @@ useSeoMeta({
           <v-app-bar-title>
             <v-row class="d-flex justify-space-between">
               <v-col cols="2" class="d-flex align-center">
-                <img src="~/assets/icons/firetechno-logo.svg" alt="" class="logo">
+                <NuxtLink to="/">
+                  <img src="~/assets/icons/firetechno-logo.svg" alt="" class="logo">
+                </NuxtLink>
               </v-col>
               <v-col cols="10" class="navigation">
                 <NuxtLink to="#our-teams">

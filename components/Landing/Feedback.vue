@@ -1,6 +1,31 @@
 <script setup></script>
 <template>
   <v-row style="margin-top: 100px;">
+    <v-col cols="12" class="d-flex flex-column d-lg-none">
+      <h2>
+        Форма обратной связи: <br />
+        получите бесплатную <br />
+        консультацию
+      </h2>
+      <div class="my-5">
+        <h3>
+          Заполните форму, и мы с вами свяжемся в <br />
+          ближайшее время.
+        </h3>
+        <p>
+          Оставьте свои контактные данные, и наш специалист <br />
+          проконсультирует вас по всем вопросам.
+        </p>
+      </div>
+      <div class="my-5">
+        <h3>Узнайте, как мы можем помочь вашему бизнесу!</h3>
+        <p>
+          Мы предлагаем индивидуальные решения <br />
+          для каждого клиента.
+        </p>
+      </div>
+    </v-col>
+
     <v-col cols="12" lg="6"> 
       <div class="card">
         <v-row style="color: white;">
@@ -34,7 +59,7 @@
         </v-row>
       </div>
     </v-col>
-    <v-col cols="12" lg="6">
+    <v-col cols="12" lg="6" class="d-none d-lg-flex">
       <div class="back">
         <h2>
           Форма обратной связи: <br />
