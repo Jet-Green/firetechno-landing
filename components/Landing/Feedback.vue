@@ -12,10 +12,13 @@ const formData = ref({
 let valid = ref(false);
 
 let form: any = ref(null);
+let submitCount = ref(0)
 
 const handleSubmit = async () => {
   if (form.value.validate()) {
-    console.log('Форма прошла валидацию', formData.value);
+    submitCount.value += 1;
+    if (submitCount.value > 1) return;
+
     let toSend = formData.value;
 
     let response = await fetch("https://formtomail.ru/send", {
@@ -219,6 +222,6 @@ const handleSubmit = async () => {
 }
 .inf-item-icon {
   font-size: 40px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 </style>

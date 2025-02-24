@@ -9,6 +9,18 @@ useSeoMeta({
   ogDescription: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO',
   ogImage: 'https://example.com/image.png',
 })
+
+const links = [
+  { name: "О нас", path: "/#our-teams" },
+  { name: "Портфолио", path: "/#cases" },
+  { name: "Заказать сайт", path: "/#order" }
+];
+
+const activeIndex: any = ref(null);
+
+const setActiveLink = (index: number) => {
+  activeIndex.value = index;
+};
 </script>
 <template>
   <v-app-bar color="black" height="80">
@@ -17,21 +29,31 @@ useSeoMeta({
         <v-col cols="12" xl="11">
           <v-app-bar-title>
             <v-row class="d-flex justify-space-between">
-              <v-col cols="2" class="d-flex align-center">
+              <v-col cols="2" class="d-flex align-center justify-start">
                 <NuxtLink to="/">
                   <img src="~/assets/icons/firetechno-logo.svg" alt="" class="logo">
                 </NuxtLink>
               </v-col>
               <v-col cols="10" class="navigation">
-                <NuxtLink to="#our-teams">
+                <NuxtLink
+                  v-for="(link, index) in links"
+                  :key="index"
+                  :to="link.path"
+                  class="animated-link"
+                  :class="{ active: activeIndex === index }"
+                  @click="setActiveLink(index)"
+                >
+                  {{ link.name }}
+                </NuxtLink>
+                <!-- <NuxtLink to="#our-teams" class="animated-link" :active-class="'active'">
                   О нас
                 </NuxtLink>
-                <NuxtLink to="#cases">
+                <NuxtLink to="#cases" class="animated-link">
                   Портфолио
                 </NuxtLink>
-                <NuxtLink to="#order">
+                <NuxtLink to="#order" class="animated-link">
                   Заказать сайт
-                </NuxtLink> 
+                </NuxtLink>  -->
               </v-col>
             </v-row>
           </v-app-bar-title>
@@ -58,7 +80,7 @@ useSeoMeta({
   </v-container>
   <div class="why-us-background">
     <v-container>
-      <v-row>
+      <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
           <LandingWhyUs />
         </v-col>
@@ -66,7 +88,7 @@ useSeoMeta({
     </v-container>
   </div>
   <v-container>
-    <v-row>
+    <v-row class="d-flex justify-center">
       <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
@@ -123,5 +145,32 @@ useSeoMeta({
     font-size: clamp(0.5rem, 0.2666rem + 1.2448vw, 1.25rem);
     margin: 10px;
   }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.animated-link {
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.animated-link.active::after {
+  width: 100%;
 }
 </style>
