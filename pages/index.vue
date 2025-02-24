@@ -11,7 +11,7 @@ useSeoMeta({
 })
 </script>
 <template>
-  <v-app-bar color="black">
+  <v-app-bar color="black" height="90">
     <v-container>
       <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
@@ -40,7 +40,7 @@ useSeoMeta({
     </v-container>
   </v-app-bar>
   
-  <v-container class="container" style="margin-top: 64px;"><!-- margin for header -->
+  <v-container class="container" style="margin-top: 90px;"><!-- margin for header -->
     <v-row class="d-flex justify-center">
       <v-col cols="12" xl="11">
         <LandingSiteDevelopmentForYourTasks />
@@ -104,7 +104,7 @@ useSeoMeta({
   background-position: center;
 }
 .logo {
-  height: 50px;
+  height: 70px;
   cursor: pointer;
 }
 .navigation {
@@ -117,7 +117,10 @@ useSeoMeta({
     // info abt clamp:
     // 360 -- 1264
     // 12 -- 20
-    font-size: clamp(0.75rem, 0.5509rem + 0.885vw, 1.25rem);
+    // font-size: clamp(0.75rem, 0.5509rem + 0.885vw, 1.25rem);
+    // 300 -- 1264
+    // 8 -- 20
+    font-size: clamp(0.5rem, 0.2666rem + 1.2448vw, 1.25rem);
     margin: 10px;
   }
 }
