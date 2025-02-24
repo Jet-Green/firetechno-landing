@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+  runtimeConfig: {
+    formToMailApiKey: process.env.FORM_TO_MAIL_API_KEY,
+  },
 
   modules: [
     (_options, nuxt) => {

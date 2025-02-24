@@ -1,4 +1,47 @@
-<script setup></script>
+<script setup lang="ts">
+const config = useRuntimeConfig()
+
+const formData = ref({
+  name: '',
+  socialNetworkOrEmail: '',
+  phone: '',
+  budget: '',
+  comment: ''
+});
+
+let valid = ref(false);
+
+let form: any = ref(null);
+
+const handleSubmit = async () => {
+  if (form.value.validate()) {
+    console.log('Форма прошла валидацию', formData.value);
+    let toSend = formData.value;
+
+    let response = await fetch("https://formtomail.ru/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        to: ["grishadzyin@gmail.com"], // Куда приходит
+        title: "Заказ на разработку сайта", // Заголовок письма
+        body: {   // Содержимое формы (можно прислать HTML)
+          "Имя": toSend.name,
+          "tg или email": toSend.socialNetworkOrEmail,
+          "Телефон": toSend.phone,
+          "Бюджет": toSend.budget,
+          "Комментарий": toSend.comment,
+        },
+        apiKey: config.formToMailApiKey,
+      })
+    });
+
+    let body = await response.json();
+    console.log(body);
+  }
+};
+</script>
 <template>
   <v-row style="margin-top: 100px;">
     <v-col cols="12" class="d-flex flex-column d-lg-none">
@@ -28,7 +71,68 @@
 
     <v-col cols="12" lg="6"> 
       <div class="card">
-        <v-row style="color: white;">
+        <v-form v-model="valid" ref="form" lazy-validation >
+          <v-col cols="12">
+            <h2 class="text-center">Заказать сайт</h2>
+          </v-col>
+          <v-col cols="12">
+            <v-text-field
+              v-model="formData.name"
+              :rules="[v => !!v || 'Имя обязательно']"
+              label="Имя"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field
+              v-model="formData.socialNetworkOrEmail"
+              :rules="[v => !!v || 'Контакты обязательны']"
+              label="Telegram/почта"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field
+              v-model="formData.phone"
+              :rules="[v => !!v || 'Номер телефона обязателен']"
+              label="Номер телефона"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-text-field
+              v-model="formData.budget"
+              :rules="[v => !!v || 'Бюджет обязателен']"
+              label="Бюджет"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12">
+            <v-textarea
+              v-model="formData.comment"
+              label="Комментарий"
+              variant="outlined"
+            ></v-textarea>
+          </v-col>
+
+          <v-col cols="12">
+            <v-btn
+              class="buy-btn"
+              color="primary"
+              size="x-large"
+              style="width: 100%;"
+              :disabled="!valid"
+              @click="handleSubmit"
+            >
+              заказать
+            </v-btn>
+          </v-col>
+        </v-form>
+        <!-- <v-row style="color: white;">
           <v-col cols="12">
             <h2 class="text-center">Заказать сайт</h2>
           </v-col>
@@ -56,7 +160,7 @@
           <v-col cols="12">
             <v-btn class="buy-btn" color="primary" size="x-large" style="width: 100%;"> заказать </v-btn>
           </v-col>
-        </v-row>
+        </v-row> -->
       </div>
     </v-col>
     <v-col cols="12" lg="6" class="d-none d-lg-flex">
@@ -71,17 +175,23 @@
             Заполните форму, и мы с вами свяжемся в <br />
             ближайшее время.
           </h4>
-          <p>
-            Оставьте свои контактные данные, и наш специалист <br />
-            проконсультирует вас по всем вопросам.
-          </p>
+          <div class="inf-item">
+            <v-icon class="inf-item-icon">mdi-account-tie</v-icon>
+            <p>
+              Оставьте свои контактные данные, и наш специалист <br />
+              проконсультирует вас по всем вопросам.
+            </p>
+          </div>
         </div>
         <div class="inf">
           <h4>Узнайте, как мы можем помочь вашему бизнесу!</h4>
-          <p>
-            Мы предлагаем индивидуальные решения <br />
-            для каждого клиента.
-          </p>
+          <div class="inf-item">
+            <v-icon class="inf-item-icon">mdi-account-heart-outline</v-icon>
+            <p>
+              Мы предлагаем индивидуальные решения <br />
+              для каждого клиента.
+            </p>
+          </div>
         </div>
       </div>
     </v-col>
@@ -102,5 +212,13 @@
   background-color: black;
   border-radius: 30px;
   padding: 30px;
+}
+.inf-item {
+  display: flex;
+  align-items: center;
+}
+.inf-item-icon {
+  font-size: 40px;
+  margin-right: 20px;
 }
 </style>
