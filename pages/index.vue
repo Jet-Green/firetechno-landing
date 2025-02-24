@@ -1,6 +1,44 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: "FIRE TECHNO"
+})
+useSeoMeta({
+  title: 'FIRE TECHNO',
+  ogTitle: 'FIRE TECHNO',
+  description: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO',
+  ogDescription: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO',
+  ogImage: 'https://example.com/image.png',
+})
+</script>
 <template>
-  <v-container class="container">
+  <v-app-bar color="black">
+    <v-container>
+      <v-row class="d-flex justify-center">
+        <v-col cols="12" xl="11">
+          <v-app-bar-title>
+            <v-row class="d-flex justify-space-between">
+              <v-col cols="2" class="d-flex align-center">
+                <img src="~/assets/icons/firetechno-logo.svg" alt="" class="logo">
+              </v-col>
+              <v-col cols="10" class="navigation">
+                <NuxtLink to="#our-teams">
+                  О нас
+                </NuxtLink>
+                <NuxtLink to="#cases">
+                  Портфолио
+                </NuxtLink>
+                <NuxtLink to="#order">
+                  Заказать сайт
+                </NuxtLink> 
+              </v-col>
+            </v-row>
+          </v-app-bar-title>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app-bar>
+  
+  <v-container class="container" style="margin-top: 64px;"><!-- margin for header -->
     <v-row class="d-flex justify-center">
       <v-col cols="12" xl="11">
         <LandingSiteDevelopmentForYourTasks />
@@ -30,7 +68,7 @@
       <v-col cols="12" xl="11">
         <LandingStagesOfWork />
       </v-col>
-      <v-col cols="12" xl="11">
+      <v-col cols="12" xl="11" id="our-teams">
         <LandingOurTeams />
       </v-col>
     </v-row>
@@ -43,10 +81,10 @@
   <div style="background-color: #c60202">
     <v-container>
       <v-row class="d-flex justify-center">
-        <v-col cols="12" xl="11">
+        <v-col cols="12" xl="11" id="cases">
           <LandingCases />
         </v-col>
-        <v-col cols="12" xl="11">
+        <v-col cols="12" xl="11" id="order">
           <LandingFeedback />
         </v-col>
       </v-row>
@@ -62,5 +100,23 @@
 .why-us-background {
   background-image: url("~/assets/images/why-us.png");
   background-position: center;
+}
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  a {
+    text-decoration: none;
+    color: white;
+    // info abt clamp:
+    // 360 -- 1264
+    // 12 -- 20
+    font-size: clamp(0.75rem, 0.5509rem + 0.885vw, 1.25rem);
+    margin: 10px;
+  }
 }
 </style>

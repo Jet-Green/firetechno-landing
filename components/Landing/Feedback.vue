@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <v-row style="margin-top: 100px;" id="order">
+  <v-row style="margin-top: 100px;">
     <v-col cols="12" lg="6"> 
       <div class="card">
         <v-row style="color: white;">
