@@ -37,7 +37,7 @@ const handleSubmit = async () => {
           "Бюджет": toSend.budget,
           "Комментарий": toSend.comment,
         },
-        apiKey: config.formToMailApiKey,
+        apiKey: config.public.formToMailApiKey,
       })
     });
 
