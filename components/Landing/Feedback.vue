@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { toast } from "vue3-toastify"
+
 const config = useRuntimeConfig()
 
 const formData = ref({
@@ -20,29 +22,37 @@ const handleSubmit = async () => {
     if (submitCount.value > 1) return;
 
     let toSend = formData.value;
-
-    let response = await fetch("https://api.formtomail.ru/send", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        to: ["grishadzyin@gmail.com"], // Куда приходит
-        title: "Заказ на разработку сайта", // Заголовок письма
-        body: {   // Содержимое формы (можно прислать HTML)
-          "Имя": toSend.name,
-          "tg или email": toSend.socialNetworkOrEmail,
-          "Телефон": toSend.phone,
-          "Бюджет": toSend.budget,
-          "Комментарий": toSend.comment,
+    try {
+      let response = await fetch("https://api.formtomail.ru/send", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json"
         },
-        apiKey: config.public.formToMailApiKey,
-      })
-    });
+        body: JSON.stringify({
+          to: ["grishadzyin@gmail.com"], // Куда приходит
+          title: "Заказ на разработку сайта", // Заголовок письма
+          body: {   // Содержимое формы (можно прислать HTML)
+            "Имя": toSend.name,
+            "tg или email": toSend.socialNetworkOrEmail,
+            "Телефон": toSend.phone,
+            "Бюджет": toSend.budget,
+            "Комментарий": toSend.comment,
+          },
+          apiKey: config.public.formToMailApiKey,
+        })
+      });
 
-    let body = await response.json();
-    console.log(body);
+      let body = await response.json();
+      
+      if (body.statusCode == 200) {
+        toast("Заявка отправлена!", { type: "success" })
+      } else {
+        toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
+      }
+    } catch (error) {
+      toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
+    }    
   }
 };
 </script>
