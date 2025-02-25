@@ -23,6 +23,7 @@ const handleSubmit = async () => {
 
     let response = await fetch("https://formtomail.ru/send", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json"
       },
