@@ -21,7 +21,7 @@ const handleSubmit = async () => {
 
     let toSend = formData.value;
 
-    let response = await fetch("https://formtomail.ru/send", {
+    let response = await fetch("https://api.formtomail.ru/send", {
       method: "POST",
       mode: "cors",
       headers: {
