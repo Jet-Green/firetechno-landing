@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   runtimeConfig: {
-    formToMailApiKey: process.env.FORM_TO_MAIL_API_KEY,
+    public: {
+      formToMailApiKey: process.env.FORM_TO_MAIL_API_KEY,
+    }
   },
 
   modules: [
