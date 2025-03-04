@@ -8,7 +8,7 @@
         <div class="timeline-item">
           <div class="content left">
             <h3 class="small-header">Опыт</h3>
-            <p>Многолетний опыт в сфере интернет-маркетинга.</p>
+            <p>4 года в коммерческой разработке</p>
             <div class="underline"></div>
           </div>
         </div>

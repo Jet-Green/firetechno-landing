@@ -66,15 +66,15 @@ const handleSubmit = async () => {
       </h2>
       <div class="my-5">
         <h3>
-          Заполните форму, и мы с вами свяжемся в <br />
+          Заполните форму, и мы свяжемся с вами в 
           ближайшее время.
         </h3>
-        <p>
+        <p class="d-none d-md-block">
           Оставьте свои контактные данные, и наш специалист <br />
           проконсультирует вас по всем вопросам.
         </p>
       </div>
-      <div class="my-5">
+      <div class="my-5 d-none d-md-block">
         <h3>Узнайте, как мы можем помочь вашему бизнесу!</h3>
         <p>
           Мы предлагаем индивидуальные решения <br />
@@ -85,7 +85,7 @@ const handleSubmit = async () => {
 
     <v-col cols="12" lg="6"> 
       <div class="card">
-        <v-form v-model="valid" ref="form" lazy-validation >
+        <v-form v-model="valid" ref="form">
           <v-col cols="12">
             <h2 class="text-center">Заказать сайт</h2>
           </v-col>
