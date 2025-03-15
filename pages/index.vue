@@ -142,7 +142,10 @@ const setActiveLink = (index: number) => {
     // font-size: clamp(0.75rem, 0.5509rem + 0.885vw, 1.25rem);
     // 300 -- 1264
     // 8 -- 20
-    font-size: clamp(0.5rem, 0.2666rem + 1.2448vw, 1.25rem);
+    // font-size: clamp(0.5rem, 0.2666rem + 1.2448vw, 1.25rem);
+    // 300 -- 1264
+    // 10 -- 20
+    font-size: clamp(0.625rem, 0.4305rem + 1.0373vw, 1.25rem);
     margin: 10px;
   }
 }
