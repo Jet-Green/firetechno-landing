@@ -25,11 +25,23 @@
               <img src="~/assets/icons/firetechno-logo.svg" alt="" class="team-logo">
             </v-col>
             <v-col cols="8" class="d-flex align-center">
-              <p class="card-title">FIRE TECHNO team</p>
+              <p class="card-title">FIRE TECHNO</p>
             </v-col>
           </v-row>
 
           <p class="comment">Если нужно выполнить заказ - пишите нам!</p>
+        </NuxtLink>
+      </v-col>
+
+      <v-col cols="12" md="6" lg="4">
+        <NuxtLink class="feature" to="https://thescript.agency" target="_blank">
+          <v-row>
+            <v-col cols="auto" class="d-flex align-center justify-end">
+              <img src="~/assets/images/script-agency-logo.png" alt="" class="team-logo">
+            </v-col>
+          </v-row>
+
+          <p class="comment">Агентство разработки и дизайна</p>
         </NuxtLink>
       </v-col>
 
