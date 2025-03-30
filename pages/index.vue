@@ -105,6 +105,9 @@ const setActiveLink = (index: number) => {
   <div style="background-color: #c60202">
     <v-container>
       <v-row class="d-flex justify-center">
+        
+        
+        
         <v-col cols="12" xl="11" id="cases">
           <LandingCases />
         </v-col>
