@@ -19,7 +19,7 @@
             <v-col cols="12" md="6" lg="4">
               <img src="~/assets/icons/Dialog Plus.svg" alt="" class="item-icon" />
               <p class="card-title">Автоматизация</p>
-              
+
               <p class="mt-10 d-flex d-xl-none">
                 Ответы на часто
                 задаваемые вопросы.
@@ -55,7 +55,7 @@
                 задаваемые вопросы.
               </p>
             </v-col>
-            
+
             <v-col cols="12" md="6" lg="4">
               <p>Доступность для клиентов в любое время.</p>
             </v-col>
@@ -72,12 +72,14 @@
     </v-col>
 
     <v-col cols="4" class="d-none d-lg-flex justify-start">
-      <img src="~/assets/images/chop-chop-phone.png" alt="">
+      <ClientOnly>
+        <img src="~/assets/images/chop-chop-phone.png" alt="">
+      </ClientOnly>
     </v-col>
   </v-row>
 </template>
 <style scoped lang="scss">
-.item-icon {
-  height: 40px;
-}
+  .item-icon {
+    height: 40px;
+  }
 </style>

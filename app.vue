@@ -1,11 +1,6 @@
 <template>
-  <NuxtLayout>
-    <v-app class="main">
-      <NuxtPage />
-    </v-app>
-  </NuxtLayout>
+  <NuxtPage />
 </template>
 <style scoped>
-.main {
-}
+  .main {}
 </style>

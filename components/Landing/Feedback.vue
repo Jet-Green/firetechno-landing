@@ -1,60 +1,60 @@
 <script setup lang="ts">
-import { toast } from "vue3-toastify"
+  import { toast } from "vue3-toastify"
 
-const config = useRuntimeConfig()
+  const config = useRuntimeConfig()
 
-const formData = ref({
-  name: '',
-  socialNetworkOrEmail: '',
-  phone: '',
-  budget: '',
-  comment: ''
-});
+  const formData = ref({
+    name: '',
+    socialNetworkOrEmail: '',
+    phone: '',
+    budget: '',
+    comment: ''
+  });
 
-let valid = ref(false);
+  let valid = ref(false);
 
-let form: any = ref(null);
-let submitCount = ref(0)
+  let form: any = ref(null);
+  let submitCount = ref(0)
 
-const handleSubmit = async () => {
-  if (form.value.validate()) {
-    submitCount.value += 1;
-    if (submitCount.value > 1) return;
+  const handleSubmit = async () => {
+    if (form.value.validate()) {
+      submitCount.value += 1;
+      if (submitCount.value > 1) return;
 
-    let toSend = formData.value;
-    try {
-      let response = await fetch("https://api.formtomail.ru/send", {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          to: ["grishadzyin@gmail.com"], // Куда приходит
-          title: "Заказ на разработку сайта", // Заголовок письма
-          body: {   // Содержимое формы (можно прислать HTML)
-            "Имя": toSend.name,
-            "tg или email": toSend.socialNetworkOrEmail,
-            "Телефон": toSend.phone,
-            "Бюджет": toSend.budget,
-            "Комментарий": toSend.comment,
+      let toSend = formData.value;
+      try {
+        let response = await fetch("https://api.formtomail.ru/send", {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
           },
-          apiKey: config.public.formToMailApiKey,
-        })
-      });
+          body: JSON.stringify({
+            to: ["grishadzyin@gmail.com"], // Куда приходит
+            title: "Заказ на разработку сайта", // Заголовок письма
+            body: {   // Содержимое формы (можно прислать HTML)
+              "Имя": toSend.name,
+              "tg или email": toSend.socialNetworkOrEmail,
+              "Телефон": toSend.phone,
+              "Бюджет": toSend.budget,
+              "Комментарий": toSend.comment,
+            },
+            apiKey: config.public.formToMailApiKey,
+          })
+        });
 
-      let body = await response.json();
-      
-      if (body.statusCode == 200) {
-        toast("Заявка отправлена!", { type: "success" })
-      } else {
+        let body = await response.json();
+
+        if (body.statusCode == 200) {
+          toast("Заявка отправлена!", { type: "success" })
+        } else {
+          toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
+        }
+      } catch (error) {
         toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
       }
-    } catch (error) {
-      toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
-    }    
-  }
-};
+    }
+  };
 </script>
 <template>
   <v-row style="margin-top: 100px;">
@@ -66,7 +66,7 @@ const handleSubmit = async () => {
       </h2>
       <div class="my-5">
         <h3>
-          Заполните форму, и мы свяжемся с вами в 
+          Заполните форму, и мы свяжемся с вами в
           ближайшее время.
         </h3>
         <p class="d-none d-md-block">
@@ -83,65 +83,39 @@ const handleSubmit = async () => {
       </div>
     </v-col>
 
-    <v-col cols="12" lg="6"> 
+    <v-col cols="12" lg="6">
       <div class="card">
         <v-form v-model="valid" ref="form">
           <v-col cols="12">
             <h2 class="text-center">Заказать сайт</h2>
           </v-col>
           <v-col cols="12">
-            <v-text-field
-              v-model="formData.name"
-              :rules="[v => !!v || 'Имя обязательно']"
-              label="Имя"
-              variant="outlined"
-            ></v-text-field>
+            <v-text-field v-model="formData.name" :rules="[v => !!v || 'Имя обязательно']" label="Имя"
+              variant="outlined"></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <v-text-field
-              v-model="formData.socialNetworkOrEmail"
-              :rules="[v => !!v || 'Контакты обязательны']"
-              label="Telegram/почта"
-              variant="outlined"
-            ></v-text-field>
+            <v-text-field v-model="formData.socialNetworkOrEmail" :rules="[v => !!v || 'Контакты обязательны']"
+              label="Telegram/почта" variant="outlined"></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <v-text-field
-              v-model="formData.phone"
-              :rules="[v => !!v || 'Номер телефона обязателен']"
-              label="Номер телефона"
-              variant="outlined"
-            ></v-text-field>
+            <v-text-field v-model="formData.phone" :rules="[v => !!v || 'Номер телефона обязателен']"
+              label="Номер телефона" variant="outlined"></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <v-text-field
-              v-model="formData.budget"
-              :rules="[v => !!v || 'Бюджет обязателен']"
-              label="Бюджет"
-              variant="outlined"
-            ></v-text-field>
+            <v-text-field v-model="formData.budget" :rules="[v => !!v || 'Бюджет обязателен']" label="Бюджет"
+              variant="outlined"></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <v-textarea
-              v-model="formData.comment"
-              label="Комментарий"
-              variant="outlined"
-            ></v-textarea>
+            <v-textarea v-model="formData.comment" label="Комментарий" variant="outlined"></v-textarea>
           </v-col>
 
           <v-col cols="12">
-            <v-btn
-              class="buy-btn"
-              color="primary"
-              size="x-large"
-              style="width: 100%;"
-              :disabled="!valid"
-              @click="handleSubmit"
-            >
+            <v-btn class="buy-btn" color="primary" size="x-large" style="width: 100%;" :disabled="!valid"
+              @click="handleSubmit">
               заказать
             </v-btn>
           </v-col>
@@ -212,27 +186,32 @@ const handleSubmit = async () => {
   </v-row>
 </template>
 <style scoped lang="scss">
-.inf {
-  padding-top: 59px;
-  h4 {
-    padding-bottom: 19px;
-    font-size: 24px;
+  .inf {
+    padding-top: 59px;
+
+    h4 {
+      padding-bottom: 19px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
-  p {
-    font-size: 20px;
+
+  .card {
+    background-color: black;
+    border-radius: 30px;
+    padding: 30px;
   }
-}
-.card {
-  background-color: black;
-  border-radius: 30px;
-  padding: 30px;
-}
-.inf-item {
-  display: flex;
-  align-items: center;
-}
-.inf-item-icon {
-  font-size: 40px;
-  margin-right: 25px;
-}
+
+  .inf-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .inf-item-icon {
+    font-size: 40px;
+    margin-right: 25px;
+  }
 </style>

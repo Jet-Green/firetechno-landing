@@ -28,8 +28,11 @@
       </div>
     </v-col>
 
-    <v-col cols="12" lg="6" class="d-none d-lg-flex align-start justify-start" style="position: relative; overflow: visible;">
-      <img src="~/assets/images/man with computer.png" alt="" class="man-with-comp" />
+    <v-col cols="12" lg="6" class="d-none d-lg-flex align-start justify-start"
+      style="position: relative; overflow: visible;">
+      <ClientOnly>
+        <img src="~/assets/images/man with computer.png" alt="" class="man-with-comp" />
+      </ClientOnly>
     </v-col>
 
     <div class="photo">
@@ -38,18 +41,18 @@
   </v-row>
 </template>
 <style scoped lang="scss">
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-}
+  .list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
 
-.man-with-comp {
-  height: 80vh;
-  position: absolute;
-  left: -200px;
-  top: -200px;
-}
+  .man-with-comp {
+    height: 80vh;
+    position: absolute;
+    left: -200px;
+    top: -200px;
+  }
 </style>

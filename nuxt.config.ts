@@ -1,8 +1,18 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   css: ['~/assets/styles/main.scss'],
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
+    css: {
+      preprocessorOptions: {
 
-  //...
+      }
+    }
+  },
   build: {
     transpile: ['vuetify'],
   },
@@ -25,15 +35,6 @@ export default defineNuxtConfig({
       }
     }],
   ],
-
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
-    },
-  },
-
   devtools: {
     enabled: true
   },
