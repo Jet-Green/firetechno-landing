@@ -1,14 +1,16 @@
-const { execSync } = require('child_process');
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
-const fs = require('fs');
-const path = require('path');
-require('dotenv').config();
+import { execSync } from 'child_process'
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
+import fs from "fs";
+import path from 'path'
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const BUCKET_NAME = process.env.YC_BUCKET_NAME;
-const ACCESS_KEY = process.env.YC_ACCESS_KEY;
-const SECRET_KEY = process.env.YC_SECRET_KEY;
+const YC_KEY_ID = process.env.YC_KEY_ID;
+const YC_SECRET = process.env.YC_SECRET;
 const ENDPOINT = 'https://storage.yandexcloud.net';
-const BUILD_DIR = 'dist';
+const BUILD_DIR = '.output/public';
+
 
 // Шаг 1: Сборка статического сайта
 console.log('🔧 Building Nuxt static site...');
@@ -19,8 +21,8 @@ const s3 = new S3Client({
   region: 'ru-central1',
   endpoint: ENDPOINT,
   credentials: {
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_KEY,
+    accessKeyId: YC_KEY_ID,
+    secretAccessKey: YC_SECRET,
   },
 });
 
