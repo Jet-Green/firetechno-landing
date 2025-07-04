@@ -1,60 +1,61 @@
 <script setup lang="ts">
-  import { toast } from "vue3-toastify"
+import { toast } from "vue3-toastify"
 
-  const config = useRuntimeConfig()
+const config = useRuntimeConfig()
 
-  const formData = ref({
-    name: '',
-    socialNetworkOrEmail: '',
-    phone: '',
-    budget: '',
-    comment: ''
-  });
+const formData = ref({
+  name: '',
+  socialNetworkOrEmail: '',
+  phone: '',
+  budget: '',
+  comment: ''
+});
 
-  let valid = ref(false);
+let valid = ref(false);
+let personalDataAgreement = ref(false)
 
-  let form: any = ref(null);
-  let submitCount = ref(0)
+let form: any = ref(null);
+let submitCount = ref(0)
 
-  const handleSubmit = async () => {
-    if (form.value.validate()) {
-      submitCount.value += 1;
-      if (submitCount.value > 1) return;
+const handleSubmit = async () => {
+  if (form.value.validate()) {
+    submitCount.value += 1;
+    if (submitCount.value > 1) return;
 
-      let toSend = formData.value;
-      try {
-        let response = await fetch("https://api.formtomail.ru/send", {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json"
+    let toSend = formData.value;
+    try {
+      let response = await fetch("https://api.formtomail.ru/send", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          to: ["grishadzyin@gmail.com"], // Куда приходит
+          title: "Заказ на разработку сайта", // Заголовок письма
+          body: {   // Содержимое формы (можно прислать HTML)
+            "Имя": toSend.name,
+            "tg или email": toSend.socialNetworkOrEmail,
+            "Телефон": toSend.phone,
+            "Бюджет": toSend.budget,
+            "Комментарий": toSend.comment,
           },
-          body: JSON.stringify({
-            to: ["grishadzyin@gmail.com"], // Куда приходит
-            title: "Заказ на разработку сайта", // Заголовок письма
-            body: {   // Содержимое формы (можно прислать HTML)
-              "Имя": toSend.name,
-              "tg или email": toSend.socialNetworkOrEmail,
-              "Телефон": toSend.phone,
-              "Бюджет": toSend.budget,
-              "Комментарий": toSend.comment,
-            },
-            apiKey: config.public.formToMailApiKey,
-          })
-        });
+          apiKey: config.public.formToMailApiKey,
+        })
+      });
 
-        let body = await response.json();
+      let body = await response.json();
 
-        if (body.statusCode == 200) {
-          toast("Заявка отправлена!", { type: "success" })
-        } else {
-          toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
-        }
-      } catch (error) {
+      if (body.statusCode == 200) {
+        toast("Заявка отправлена!", { type: "success" })
+      } else {
         toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
       }
+    } catch (error) {
+      toast("Ошибка при отправлении! Обратитесь в поддержку!", { type: "error" })
     }
-  };
+  }
+};
 </script>
 <template>
   <v-row style="margin-top: 100px;">
@@ -114,8 +115,13 @@
           </v-col>
 
           <v-col cols="12">
-            <v-btn class="buy-btn" color="primary" size="x-large" style="width: 100%;" :disabled="!valid"
-              @click="handleSubmit">
+            <v-checkbox v-model="personalDataAgreement"
+              label="Соглашение на обработку персональных данных"></v-checkbox>
+          </v-col>
+
+          <v-col cols="12">
+            <v-btn class="buy-btn" color="primary" size="x-large" style="width: 100%;"
+              :disabled="!valid && !personalDataAgreement" @click="handleSubmit">
               заказать
             </v-btn>
           </v-col>
@@ -186,32 +192,32 @@
   </v-row>
 </template>
 <style scoped lang="scss">
-  .inf {
-    padding-top: 59px;
+.inf {
+  padding-top: 59px;
 
-    h4 {
-      padding-bottom: 19px;
-      font-size: 24px;
-    }
-
-    p {
-      font-size: 20px;
-    }
+  h4 {
+    padding-bottom: 19px;
+    font-size: 24px;
   }
 
-  .card {
-    background-color: black;
-    border-radius: 30px;
-    padding: 30px;
+  p {
+    font-size: 20px;
   }
+}
 
-  .inf-item {
-    display: flex;
-    align-items: center;
-  }
+.card {
+  background-color: black;
+  border-radius: 30px;
+  padding: 30px;
+}
 
-  .inf-item-icon {
-    font-size: 40px;
-    margin-right: 25px;
-  }
+.inf-item {
+  display: flex;
+  align-items: center;
+}
+
+.inf-item-icon {
+  font-size: 40px;
+  margin-right: 25px;
+}
 </style>
