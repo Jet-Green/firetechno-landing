@@ -14,8 +14,24 @@ export default defineNuxtConfig({
       formToMailApiKey: process.env.FORM_TO_MAIL_API_KEY,
     }
   },
-
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1',
+      link: [
+        { rel: "icon", type: "image/png", href: "/favicon.ico" }
+      ]
+    }
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml'], // включаем sitemap в генерацию
+    }
+  },
   modules: [
+    '@nuxtjs/sitemap',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -45,5 +61,15 @@ export default defineNuxtConfig({
       }
     }
   },
-  compatibilityDate: '2025-02-13'
+  compatibilityDate: '2025-02-13',
+  site: {
+    url: 'https://firetechno.ru',
+    name: 'FIRE TECHNO',
+  },
+  // sitemap: {
+  //   hostname: 'https://firetechno.ru',
+  //   gzip: true,
+  //   routes: ['/']
+  // },
+
 })

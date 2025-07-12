@@ -1,13 +1,18 @@
 <script setup lang="ts">
   useHead({
-    title: "FIRE TECHNO"
+    title: "FIRE TECHNO",
+    meta: [
+      { name: 'description', content: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO' },
+      { name: 'keywords', content: 'лендинги, продвижение, заказная разработка, telegram, telegram mini-apps' },
+      { name: "yandex-verification", content: "8542f5bff424e91c"}
+    ]
   })
   useSeoMeta({
     title: 'FIRE TECHNO',
     ogTitle: 'FIRE TECHNO',
     description: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO',
     ogDescription: 'Разработка сайтов для ваших задач. Создание и разработка сайтов от команд FIRE TECHNO',
-    // ogImage: 'https://example.com/image.png',
+    ogImage: '/og-image.png',
   })
 
   const links = [
