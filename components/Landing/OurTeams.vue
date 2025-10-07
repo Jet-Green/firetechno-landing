@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <h2>Команды исполнителей</h2>
+  <h2>Партнеры</h2>
   <v-col cols="12">
     <v-row class="features">
       <v-col cols="12" md="6" lg="4">
@@ -62,14 +62,16 @@
 </template>
 <style scoped lang="scss">
 h2 {
-  padding-bottom: 74px;
-  padding-top: 94px;
+  padding-bottom: 60px;
+  padding-top: 90px;
 }
+
 .features {
   display: flex;
 }
+
 .feature {
-  border: 1px solid #dc0000;
+  border: 1px solid white;
   border-radius: 25px;
   padding: 30px;
   display: flex;
@@ -78,13 +80,18 @@ h2 {
   height: 100%;
   text-decoration: none;
   color: white;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 1);
+  // background-color: white;
 }
+
 .comment {
   margin-top: 40px;
 }
+
 .card-icon {
   height: 80px;
 }
+
 .team-logo {
   height: 80px;
 }
