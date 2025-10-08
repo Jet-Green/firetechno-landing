@@ -17,7 +17,7 @@
 </template>
 <style scoped lang="scss">
 .page {
-  min-height: 60dvh;
+  min-height: 70dvh;
   display: flex;
   align-items: center;
 }

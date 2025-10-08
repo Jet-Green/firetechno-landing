@@ -20,7 +20,7 @@ useSeoMeta({
 <template>
   <div>
 
-    <v-container class="container" style="margin-top: 80px;"><!-- margin for header -->
+    <v-container class="container">
       <v-row class="d-flex justify-center">
         <v-col cols="12" xl="11">
           <LandingSiteDevelopmentForYourTasks />
