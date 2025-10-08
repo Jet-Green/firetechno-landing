@@ -51,9 +51,9 @@ useSeoMeta({
           <v-col cols="12" xl="11" id="our-teams">
             <LandingOurTeams />
           </v-col>
-          <v-col cols="12" xl="11" id="cases">
+          <!-- <v-col cols="12" xl="11" id="cases">
             <LandingCases />
-          </v-col>
+          </v-col> -->
           <v-col cols="12" xl="11" id="order">
             <LandingFeedback />
           </v-col>

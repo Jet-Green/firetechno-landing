@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const links = [
   { name: "Партнеры", path: "/#our-teams" },
-  { name: "Портфолио", path: "/#cases" },
+  // { name: "Портфолио", path: "/#cases" },
   { name: "Заказать сайт", path: "/#order" }
 ];
 
