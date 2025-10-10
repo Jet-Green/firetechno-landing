@@ -23,36 +23,43 @@ const router = useRouter()
 const categories = casesStore.categories;
 const cases = casesStore.cases;
 
+const activeCategories = ref<string[]>([])
 
-const activeCategories = computed<string[]>(() => {
-  const queryParam = route.query.categories;
+onMounted(() => {
+  const queryParam = route.query.categories
   if (typeof queryParam === 'string' && queryParam) {
-    return queryParam.split(',');
+    activeCategories.value = queryParam.split(',')
   }
-  return [];
-});
+})
+
+watch(() => route.query.categories, (newVal) => {
+  if (typeof newVal === 'string' && newVal) {
+    activeCategories.value = newVal.split(',')
+  } else {
+    activeCategories.value = []
+  }
+})
 
 const toggleCategory = (category: string) => {
-  const newCategories = [...activeCategories.value];
-  const index = newCategories.indexOf(category);
+  const newCategories = [...activeCategories.value]
+  const index = newCategories.indexOf(category)
 
-  if (index === -1) {
-    newCategories.push(category);
-  } else {
-    newCategories.splice(index, 1);
-  }
+  if (index === -1) newCategories.push(category)
+  else newCategories.splice(index, 1)
 
   router.replace({
     query: {
-      categories: newCategories.length ? newCategories.join(',') : undefined
-    }
-  });
-};
+      categories: newCategories.length ? newCategories.join(',') : undefined,
+    },
+  })
+}
 
 const filteredCases = computed(() => {
-  if (!activeCategories.value.length) return cases.value;
-  return cases.value.filter(c => c.categories.some(cat => activeCategories.value.includes(cat)));
-});
+  if (!activeCategories.value.length) return cases.value
+  return cases.value.filter(c =>
+    c.categories.some(cat => activeCategories.value.includes(cat))
+  )
+})
 
 </script>
 
