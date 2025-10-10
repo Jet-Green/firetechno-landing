@@ -88,7 +88,7 @@ const filteredCases = computed(() => {
             </v-chip>
           </div>
 
-          <NuxtLink :to="caseItem.url" target="_blank" class="text-decoration-none underline-link">
+          <NuxtLink v-if="caseItem.url" :to="caseItem.url" target="_blank" class="text-decoration-none underline-link">
             Перейти к проекту →
           </NuxtLink>
           <v-carousel v-if="caseItem?.images" hide-delimiters class="mt-4">

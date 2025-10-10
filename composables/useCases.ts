@@ -88,6 +88,15 @@ export function useCases() {
       "description": "Telegram-бот с интеграцией по API SmartShell для авторизации, проверки и пополнения баланса пользователей.",
       "stack": ["Node.js", "MongoDB"],
       "url": "https://t.me/MatrixSochiBot/"
+    },
+    {
+      "id": 11,
+      "title": "БПОУ \"Глазовский политехнический колледж\" - цифровой образовательный контент",
+      "categories": ["Для бюджетных организаций"],
+      "description": "",
+      "stack": ["Vue.js"],
+      "url": "",
+      images: ["case-images/college-tsok1.png", "case-images/college-tsok2.png", "case-images/college-tsok3.png"]
     }
   ])
 
@@ -101,7 +110,8 @@ export function useCases() {
     "Telegram Mini Apps",
     "Интеграции с API",
     "Telegram боты",
-    "YClients - система записи на услуги"
+    "YClients - система записи на услуги",
+    "Для бюджетных организаций"
   ])
 
 
