@@ -3,6 +3,9 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+* {
+  font-family: "Unbounded", serif !important;
+}
 html {
   scroll-behavior: smooth;
 }
