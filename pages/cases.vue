@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
-
 useHead({
   title: "FIRE TECHNO",
   meta: [
@@ -18,66 +16,19 @@ useSeoMeta({
   ogImage: '/og-image.png',
 })
 
-const casesStore = useCases()
-const route = useRoute()
-const router = useRouter()
-
-const categories = casesStore.categories
-const cases = casesStore.cases
-
-const activeCategories = ref<string[]>([])
-
-onMounted(async () => {
-  await router.isReady()
-  const queryParam = route.query.categories
-  if (typeof queryParam === 'string' && queryParam) {
-    activeCategories.value = queryParam.split(',')
-  }
-})
-
-watch(
-  () => route.query.categories,
-  (newVal) => {
-    if (typeof newVal === 'string' && newVal) {
-      activeCategories.value = newVal.split(',')
-    } else {
-      activeCategories.value = []
-    }
-  }
-)
-
-const toggleCategory = (category: string) => {
-  const newCategories = [...activeCategories.value]
-  const index = newCategories.indexOf(category)
-
-  if (index === -1) newCategories.push(category)
-  else newCategories.splice(index, 1)
-
-  router.replace({
-    query: {
-      categories: newCategories.length ? newCategories.join(',') : undefined
-    }
-  })
-}
-
-const filteredCases = computed(() => {
-  if (!activeCategories.value.length) return cases.value
-  return cases.value.filter(c =>
-    c.categories.some(cat => activeCategories.value.includes(cat))
-  )
-})
+const { categories, filteredCases, activeCategories, toggleCategory } = useCases()
 </script>
 
 <template>
-  <v-container class="container">
+  <v-container>
     <v-row class="d-flex justify-center mb-8">
       <v-col cols="12" md="10" xl="9" lg="8" class="d-flex justify-center">
         <div class="d-flex justify-center align-center flex-wrap gap-4">
-          <v-chip v-for="(category, index) in categories" :key="index" class="case-chip ma-2"
-            :prepend-icon="activeCategories.includes(category) ? 'mdi-check' : ''"
-            :class="{ 'chip-active': activeCategories.includes(category) }" @click="toggleCategory(category)"
-            size="large" pill variant="outlined" color="white">
-            {{ category }}
+          <v-chip v-for="cat in categories" :key="cat.key" class="case-chip ma-2"
+            :prepend-icon="activeCategories.includes(cat.key) ? 'mdi-check' : ''"
+            :class="{ 'chip-active': activeCategories.includes(cat.key) }" @click="toggleCategory(cat.key)" size="large"
+            pill variant="outlined" color="white">
+            {{ cat.name }}
           </v-chip>
         </div>
       </v-col>
@@ -86,12 +37,8 @@ const filteredCases = computed(() => {
     <v-row class="d-flex justify-center">
       <v-col v-for="caseItem in filteredCases" :key="caseItem.id" cols="12" md="10" xl="9" lg="8">
         <v-card class="mb-6 pa-8 case-card" color="rgba(255,255,255,0.05)" flat>
-          <h3 class="text-h5 text-white mb-2">
-            {{ caseItem.title }}
-          </h3>
-          <p class="text-body-2 text-grey mb-4">
-            {{ caseItem.description }}
-          </p>
+          <h3 class="text-h5 text-white mb-2">{{ caseItem.title }}</h3>
+          <p class="text-body-2 text-grey mb-4">{{ caseItem.description }}</p>
 
           <div class="d-flex flex-wrap gap-2 mb-4">
             <v-chip v-for="(tech, i) in caseItem.stack" :key="i" color="white" variant="outlined" size="small"
@@ -103,8 +50,9 @@ const filteredCases = computed(() => {
           <NuxtLink v-if="caseItem.url" :to="caseItem.url" target="_blank" class="text-decoration-none underline-link">
             Перейти к проекту →
           </NuxtLink>
-          <v-carousel v-if="caseItem?.images" hide-delimiters class="mt-4">
-            <v-carousel-item v-for="(img, index) of caseItem.images" :src="img" contain></v-carousel-item>
+
+          <v-carousel v-if="caseItem.images" hide-delimiters class="mt-4">
+            <v-carousel-item v-for="(img, i) in caseItem.images" :key="i" :src="img" contain />
           </v-carousel>
         </v-card>
       </v-col>
