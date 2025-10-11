@@ -38,7 +38,7 @@ const { categories, filteredCases, activeCategories, toggleCategory } = useCases
       <v-col v-for="caseItem in filteredCases" :key="caseItem.id" cols="12" md="10" xl="9" lg="8">
         <v-card class="mb-6 pa-8 case-card" color="rgba(255,255,255,0.05)" flat>
           <h3 class="text-h5 text-white mb-2">{{ caseItem.title }}</h3>
-          <p class="text-body-2 text-grey mb-4">{{ caseItem.description }}</p>
+          <p class="my-4" v-html="caseItem.description"></p>
 
           <div class="d-flex flex-wrap gap-2 mb-4">
             <v-chip v-for="(tech, i) in caseItem.stack" :key="i" color="white" variant="outlined" size="small"

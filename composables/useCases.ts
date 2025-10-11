@@ -22,7 +22,7 @@ export function useCases() {
       title: 'Маркетплейс туров «Города и веси»',
       categoryKeys: ['marketplaces', 'web-services', 'payment-integration'],
       description:
-        'Федеральный маркетплейс для бронирования туров. Высоконагруженный сервис с личными кабинетами, системой бронирования и онлайн-оплаты.',
+        'Портал для бронирования туров и поездок. Высоконагруженный сервис с личными кабинетами, системой бронирования и онлайн-оплаты и <span class="text-primary">crm-системой</span>, разработанной под <span class="text-primary">индивидуальный запрос</span> заказчика.',
       stack: ['Vue.js', 'Express', 'MongoDB'],
       url: 'https://gorodaivesi.ru',
       images: ['case-images/gorodaivesi1.png', 'case-images/gorodaivesi2.png'],
@@ -32,7 +32,7 @@ export function useCases() {
       title: 'Сервис-афиша «Place of Posters»',
       categoryKeys: ['web-services', 'marketplaces'],
       description:
-        'Всероссийский сервис-афиша для тысяч событий. Сложная архитектура для быстрой обработки данных и удобного планирования досуга.',
+        '<span class="text-primary">Афиша</span> для тысяч событий. Сложная архитектура для быстрой обработки данных и удобного планирования досуга.',
       stack: ['Nuxt 3.0', 'NestJS', 'MongoDB'],
       url: 'https://plpo.ru',
       images: ['case-images/plpo1.png', 'case-images/plpo2.png'],
@@ -42,7 +42,7 @@ export function useCases() {
       title: 'Маркетплейс «glazovest.ru»',
       categoryKeys: ['marketplaces', 'payment-integration', 'web-services'],
       description:
-        'Онлайн-маркетплейс формата «лавок», объединяющий локальных продавцов на одной платформе с real-time взаимодействием.',
+        'Онлайн-маркетплейс «лавок», объединяющий локальных продавцов на одной платформе с real-time взаимодействием и обработкой заказов прямо на платформе в <span class="text-primary">crm-системе</span>.',
       stack: ['Nuxt 3.0', 'TypeScript', 'WebSocket', 'NestJS'],
       url: 'https://glazovest.ru',
       images: [
@@ -56,7 +56,7 @@ export function useCases() {
       title: '«Городская IT библиотека»',
       categoryKeys: ['web-services'],
       description:
-        'Система онлайн-бронирования книг для IT-сообщества. Автоматизирует и упрощает доступ к библиотечному фонду.',
+        'Система <span class="text-primary">онлайн-бронирования книг</span> для IT-сообщества. Автоматизирует и упрощает доступ к библиотечному фонду.',
       stack: ['Vue.js', 'Firebase', 'Express.js', 'MongoDB'],
       url: 'https://lib.qbit-club.com',
     },
@@ -65,7 +65,7 @@ export function useCases() {
       title: 'Сайт барбершопа «Location21»',
       categoryKeys: ['landings', 'ai-integration', 'yclients'],
       description:
-        'Стильный сайт с онлайн-записью через YClients и уникальной функцией подбора стрижки с помощью искусственного интеллекта.',
+        'Стильный сайт с онлайн-записью через <span class="text-primary">YClients</span> и уникальной функцией <span class="text-primary">подбора стрижки</span> с помощью <span class="text-primary">ИИ</span>.',
       stack: ['Nuxt', 'Yandex Cloud Functions'],
       url: 'https://location21barbershop.ru',
       images: [
@@ -78,7 +78,7 @@ export function useCases() {
       title: 'Сайт фитнес-тренера «NIKA STEEL»',
       categoryKeys: ['landings'],
       description:
-        'Быстрый и современный корпоративный сайт для производителя металлоконструкций. Эффективно представляет продукцию в B2B-сегменте.',
+        'Продающий и мотивирующий <span class="text-primary">лендинг</span>, повышающий лояльность клиента.',
       stack: ['Nuxt', 'Yandex Cloud', 'AWS SDK'],
       url: 'https://nikasteel.ru/',
       images: ['case-images/nikasteel1.png', 'case-images/nikasteel2.png'],
@@ -88,7 +88,7 @@ export function useCases() {
       title: 'Лендинг «FIRE TECHNO»',
       categoryKeys: ['corporate', 'landings'],
       description:
-        'Лендинг для агентства web-разработки, демонстрирующий ключевые услуги и подход к работе.',
+        'Лендинг для агентства web-разработки <span class="text-primary">FIRE TECHNO</span>, демонстрирующий ключевые услуги и подход к работе.',
       stack: ['Nuxt', 'Yandex Cloud', 'AWS SDK'],
       url: 'https://firetechno.ru/',
       images: ['case-images/firetechno1.png', 'case-images/firetechno2.png'],
@@ -98,7 +98,7 @@ export function useCases() {
       title: 'Location21 Telegram Mini App',
       categoryKeys: ['telegram-miniapps', 'ai-integration', 'api-integration', 'yclients'],
       description:
-        'MiniApp для записи в барбершоп через YClients с рекомендациями от ИИ Яндекса прямо в Telegram.',
+        '<span class="text-primary">Telegram MiniApp</span> для записи в барбершоп через YClients с рекомендациями от <span class="text-primary">ИИ Яндекса</span> прямо в Telegram.',
       stack: ['Nuxt 3.0', 'Yandex Cloud Functions'],
       url: 'https://t.me/location21_miniapp_bot',
       images: [
@@ -113,7 +113,7 @@ export function useCases() {
       title: 'HEADMAN Telegram Mini App',
       categoryKeys: ['telegram-miniapps', 'api-integration', 'yclients'],
       description:
-        'Удобный MiniApp для быстрой записи на услуги популярной сети барбершопов HEADMAN через YClients.',
+        'Удобный <span class="text-primary">Telegram MiniApp</span>, встроенный в <span class="text-primary">Telegram-канал</span>, для быстрой записи на услуги популярной сети барбершопов HEADMAN через <span class="text-primary">YClients</span>.',
       stack: ['Nuxt', 'Yandex Cloud', 'AWS SDK'],
       url: 'https://t.me/chop_chop_testbot',
       images: ['case-images/headman1.png', 'case-images/headman2.png'],
@@ -123,7 +123,7 @@ export function useCases() {
       title: 'Matrix Sochi Bot',
       categoryKeys: ['telegram-bots', 'payment-integration', 'api-integration'],
       description:
-        'Telegram-бот с интеграцией по API SmartShell для авторизации, проверки и пополнения баланса пользователей.',
+        '<span class="text-primary">Telegram-бот</span> с интеграцией по API SmartShell для авторизации, проверки и пополнения баланса пользователей.',
       stack: ['Node.js', 'MongoDB'],
       url: 'https://t.me/MatrixSochiBot/',
     },
