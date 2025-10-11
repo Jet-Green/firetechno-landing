@@ -1,5 +1,5 @@
 export function useCases() {
-  const cases = useState(() => [
+  const cases = useState("cases", () => [
     {
       "id": 1,
       "title": "Маркетплейс туров «Города и веси»",
@@ -100,7 +100,7 @@ export function useCases() {
     }
   ])
 
-  const categories = useState(() => [
+  const categories = useState("categories", () => [
     "Маркетплейсы",
     "Веб-сервисы: магазины и порталы",
     "Интеграция платежной системы",

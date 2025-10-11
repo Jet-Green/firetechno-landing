@@ -27,7 +27,8 @@ const cases = casesStore.cases
 
 const activeCategories = ref<string[]>([])
 
-onMounted(() => {
+onMounted(async () => {
+  await router.isReady()
   const queryParam = route.query.categories
   if (typeof queryParam === 'string' && queryParam) {
     activeCategories.value = queryParam.split(',')
