@@ -1,5 +1,6 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
+  ssr: true,
   css: [
     "vuetify/styles",
     '~/assets/styles/main.scss',
@@ -25,6 +26,7 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    preset: 'node-server',
     prerender: {
       crawlLinks: true,
       routes: ['/sitemap.xml'], // включаем sitemap в генерацию
