@@ -18,6 +18,26 @@ export function useCases() {
 
   const cases = ref([
     {
+      id: 12,
+      title: '"Сая Лаундж"',
+      categoryKeys: ['landings', 'ai-integration'],
+      description:
+        'Посадочная страница для пермского коктейль-бара  <span class="text-primary">"Сая"</span> премиум-сегмента, подбор коктейлей с помощью ИИ',
+      stack: ['Nuxt 3.0', 'Giga Chat'],
+      url: 'https://sayalounge.ru',
+      images: ['case-images/saya1.png', 'case-images/saya2.png'],
+    },
+    {
+      id: 13,
+      title: 'Облака',
+      categoryKeys: ['landings', 'ai-integration'],
+      description:
+        'Посадочная страница для пермского ресторан-бара <span class="text-primary">"Облака"</span>, подбор коктейлей с помощью ИИ',
+      stack: ['Nuxt 3.0', 'Giga Chat'],
+      url: 'https://oblaka-perm.ru/',
+      images: ['case-images/oblaka1.png', 'case-images/oblaka2.png'],
+    },
+    {
       id: 1,
       title: 'Маркетплейс туров «Города и веси»',
       categoryKeys: ['marketplaces', 'web-services', 'payment-integration'],
