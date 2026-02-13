@@ -29,7 +29,7 @@ export function useCases() {
     },
     {
       id: 13,
-      title: 'Облака',
+      title: 'Ресторан-бар "Облака"',
       categoryKeys: ['landings', 'ai-integration'],
       description:
         'Посадочная страница для пермского ресторан-бара <span class="text-primary">"Облака"</span>, подбор коктейлей с помощью ИИ',
