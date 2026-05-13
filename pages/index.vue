@@ -48,15 +48,15 @@ useSeoMeta({
     <div style="background-color: #c60202">
       <v-container>
         <v-row class="d-flex justify-center">
-          <v-col cols="12" xl="11" id="our-teams">
+          <v-col cols="12" xl="11" id="our-teams" style="margin-bottom: 100px;">
             <LandingOurTeams />
           </v-col>
           <!-- <v-col cols="12" xl="11" id="cases">
             <LandingCases />
           </v-col> -->
-          <v-col cols="12" xl="11" id="order">
+          <!-- <v-col cols="12" xl="11" id="order">
             <LandingFeedback />
-          </v-col>
+          </v-col> -->
         </v-row>
       </v-container>
     </div>
